@@ -1,0 +1,13 @@
+C:\Users\Nipuna\source\repos\Region\Region\bin\Debug\Region.dll
+C:\Users\Nipuna\source\repos\Region\Region\bin\Debug\Region.pdb
+C:\Users\Nipuna\source\repos\Region\Region\bin\Debug\Region.tlb
+C:\Users\Nipuna\source\repos\Region\Region\bin\Debug\Interop.Office.dll
+C:\Users\Nipuna\source\repos\Region\Region\bin\Debug\Interop.Outlook.dll
+C:\Users\Nipuna\source\repos\Region\Region\bin\Debug\Interop.VBIDE.dll
+C:\Users\Nipuna\source\repos\Region\Region\obj\Debug\Region.AddinModule.resources
+C:\Users\Nipuna\source\repos\Region\Region\obj\Debug\Region.Region1.resources
+C:\Users\Nipuna\source\repos\Region\Region\obj\Debug\Region.csproj.GenerateResource.cache
+C:\Users\Nipuna\source\repos\Region\Region\obj\Debug\Region.csproj.CopyComplete
+C:\Users\Nipuna\source\repos\Region\Region\obj\Debug\Region.dll
+C:\Users\Nipuna\source\repos\Region\Region\obj\Debug\Region.pdb
+C:\Users\Nipuna\source\repos\Region\Region\obj\Debug\Region.csprojAssemblyReference.cache
