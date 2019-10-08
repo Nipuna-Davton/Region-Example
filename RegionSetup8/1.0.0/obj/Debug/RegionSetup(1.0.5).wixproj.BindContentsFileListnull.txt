@@ -1,0 +1,9 @@
+C:\Users\Nipuna\source\repos\Region\Region\bin\Debug\Interop.Outlook.dll
+C:\Users\Nipuna\source\repos\Region\Region\Loader\adxloader.dll.manifest
+C:\Program Files (x86)\Add-in Express\Add-in Express for .NET\Bin\AddinExpress.MSO.2005.dll
+C:\Users\Nipuna\source\repos\Region\Region\Loader\adxloader64.dll
+C:\Users\Nipuna\source\repos\Region\Region\bin\Debug\Interop.VBIDE.dll
+C:\Users\Nipuna\source\repos\Region\Region\Loader\adxloader.dll
+C:\Users\Nipuna\source\repos\Region\Region\bin\Debug\Interop.Office.dll
+C:\Program Files (x86)\Add-in Express\Add-in Express for .NET\Bin\AddinExpress.OL.2005.dll
+C:\Users\Nipuna\source\repos\Region\Region\bin\Debug\\Region.dll

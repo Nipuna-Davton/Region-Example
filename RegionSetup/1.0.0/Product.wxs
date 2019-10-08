@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+  <Product Id="*" Name="Region" Language="1033" Version="1.0.0" Manufacturer="Davton (Pvt) Ltd" UpgradeCode="{A815F80A-1ED5-49F2-91E6-4059A427DEFE}" Codepage="1252">
+    <Package AdminImage="no" Comments="Region" Compressed="yes" Description="Sample Project of Add-in Express Region" InstallerVersion="200" InstallScope="perMachine" Languages="1033" Manufacturer="Davton (Pvt) Ltd" Platform="x86" ReadOnly="no" ShortNames="no" SummaryCodepage="1252" />
+    <Media Id="1" Cabinet="Region.cab" EmbedCab="yes" DiskPrompt="CD-ROM #1" />
+    <Property Id="DiskPrompt" Value="Region Installation [1]" />
+    <Property Id="ARPCOMMENTS" Value="Region" />
+    <Property Id="ARPCONTACT" Value="Davton (Pvt) Ltd" />
+    <!-- The ".NET Framework" launch condition. -->
+    <PropertyRef Id="NETFRAMEWORK45"/>
+    <Condition Message="This setup requires the .NET Framework 4.5.  Please install the .NET Framework and run this setup again."><![CDATA[Installed OR NETFRAMEWORK45]]></Condition>
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <Binary Id="adxregistrator_exe" SourceFile="$(var.ADX_PATH)\Redistributables\adxregistrator.exe" />
+    <!-- The "adxregistrator.exe" custom action. -->
+    <CustomAction Id="_E4DDE2EB_AF84_40FD_B98B_8D8DFFB41C8F" BinaryKey="adxregistrator_exe" Execute="deferred" ExeCommand="/install=&quot;[TARGETDIR]$(var.Region.TargetFileName)&quot; /privileges=admin" Impersonate="yes" />
+    <!-- The "adxregistrator.exe" custom action. -->
+    <CustomAction Id="_B53B3DA3_3D54_4E19_97ED_58E28E6300CA" BinaryKey="adxregistrator_exe" Execute="rollback" ExeCommand="/uninstall=&quot;[TARGETDIR]$(var.Region.TargetFileName)&quot; /privileges=admin /generateLogFile=false" Impersonate="yes" />
+    <!-- The "adxregistrator.exe" custom action. -->
+    <CustomAction Id="_40E256A3_7961_4248_995B_E7627F9E3E5D" BinaryKey="adxregistrator_exe" Execute="deferred" ExeCommand="/uninstall=&quot;[TARGETDIR]$(var.Region.TargetFileName)&quot; /privileges=admin" Impersonate="yes" />
+    <!-- Initialize the "TARGETDIR" directory property. -->
+    <CustomAction Id="DIRCA_TARGETDIR" Property="TARGETDIR" Value="[ProgramFilesFolder][Manufacturer]\[ProductName]" Execute="firstSequence" />
+    <Property Id="PREVIOUSINSTALLFOLDER">
+      <RegistrySearch Id="_DF9161A8_7285_4075_969F_4409A66267C9" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="Installed" Type="raw" />
+    </Property>
+    <CustomAction Id="DIRCA_TARGETDIR_UNINSTALL" Property="TARGETDIR" Value="[PREVIOUSINSTALLFOLDER]" Execute="firstSequence" />
+    <UIRef Id="WixUI_InstallDir" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+    <Property Id="WIXUI_INSTALLDIR" Value="TARGETDIR" />
+    <!-- The directory tree of the installation package. -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <!-- The "Region" project output. -->
+      <Directory Id="Region.Binaries" />
+      <!-- The "Region" project output. -->
+      <Directory Id="Region.Satellites" />
+      <Component Id="comp_910B4AA6_FB57_49FD_AFF7_960ED20365E1" Guid="5C8FD9C3-BD52-460E-8591-C259F6A88BF3" Permanent="no" SharedDllRefCount="no" Transitive="no">
+        <RegistryKey Root="HKLM" Key="Software\[Manufacturer]\[ProductName]">
+          <RegistryValue Type="string" Name="Installed" Value="[TARGETDIR]" KeyPath="yes" />
+        </RegistryKey>
+        <File Id="_A2670A85_0B16_4EC7_9586_50E201972DA7" DiskId="1" Hidden="no" ReadOnly="no" System="no" Vital="yes" Compressed="yes" Name="adxloader64.dll" Source="$(var.Region.ProjectDir)Loader\adxloader64.dll" />
+        <File Id="_DA59B904_DAC1_4C31_BF6E_FC3BE8E40060" DiskId="1" Hidden="no" ReadOnly="no" System="no" Vital="yes" Compressed="yes" Name="adxloader.dll.manifest" Source="$(var.Region.ProjectDir)Loader\adxloader.dll.manifest" />
+        <File Id="_13027FFD_AA57_4EE3_BAB6_F5D6E9F5B1ED" DiskId="1" Hidden="no" ReadOnly="no" System="no" Vital="yes" Compressed="yes" Name="adxloader.dll" Source="$(var.Region.ProjectDir)Loader\adxloader.dll" />
+      </Component>
+      <Component Id="comp_C56B7FDB_B5E5_475B_8D1B_DCA46626194B" Guid="C262D639-5816-44E6-B119-F292CB9BEBF7" Permanent="no" SharedDllRefCount="no" Transitive="no">
+				<File Id="_C56B7FDB_B5E5_475B_8D1B_DCA46626194B" DiskId="1" Hidden="no" ReadOnly="no" System="no" Vital="yes" Compressed="yes" Name="AddinExpress.MSO.2005.dll" Source="C:\Program Files (x86)\Add-in Express\Add-in Express for .NET\Bin\AddinExpress.MSO.2005.dll" />
+			</Component>
+				<Component Id="comp_4D01A214_D0E5_4586_AEB8_759F7DEE0469" Guid="134030BE-DB7C-4A8C-ACBA-01DE5C2B0A9A" Permanent="no" SharedDllRefCount="no" Transitive="no">
+				<File Id="_4D01A214_D0E5_4586_AEB8_759F7DEE0469" DiskId="1" Hidden="no" ReadOnly="no" System="no" Vital="yes" Compressed="yes" Name="AddinExpress.OL.2005.dll" Source="C:\Program Files (x86)\Add-in Express\Add-in Express for .NET\Bin\AddinExpress.OL.2005.dll" />
+			</Component>
+				<Component Id="comp_F7214ACF_DB94_490A_AC1C_39CAE170D0A7" Guid="BC692FA3-79AD-4C12-894C-901002A69F18" Permanent="no" SharedDllRefCount="no" Transitive="no">
+				<File Id="_F7214ACF_DB94_490A_AC1C_39CAE170D0A7" DiskId="1" Hidden="no" ReadOnly="no" System="no" Vital="yes" Compressed="yes" Name="Interop.Outlook.dll" Source="$(var.Region.TargetDir)Interop.Outlook.dll" />
+			</Component>
+				<Component Id="comp_9943E178_534A_457C_B2CA_BF646DB23839" Guid="1EA29EC0-490F-4D50-867C-33C14D9BEDEB" Permanent="no" SharedDllRefCount="no" Transitive="no">
+				<File Id="_9943E178_534A_457C_B2CA_BF646DB23839" DiskId="1" Hidden="no" ReadOnly="no" System="no" Vital="yes" Compressed="yes" Name="Interop.Office.dll" Source="$(var.Region.TargetDir)Interop.Office.dll" />
+			</Component>
+				<Component Id="comp_FDA1DC6E_8B89_4A80_9B02_C2071DE029F1" Guid="B239B883-4971-44EA-B4EF-FD96ED88DEAA" Permanent="no" SharedDllRefCount="no" Transitive="no">
+				<File Id="_FDA1DC6E_8B89_4A80_9B02_C2071DE029F1" DiskId="1" Hidden="no" ReadOnly="no" System="no" Vital="yes" Compressed="yes" Name="Interop.VBIDE.dll" Source="$(var.Region.TargetDir)Interop.VBIDE.dll" />
+			</Component>   
+    </Directory>
+    <!-- The FileSystem group of the installation package. -->
+    <ComponentGroup Id="FileSystemGroup">
+      <ComponentGroupRef Id="Region.Binaries" />
+      <ComponentGroupRef Id="Region.Satellites" />
+      <ComponentRef Id="comp_910B4AA6_FB57_49FD_AFF7_960ED20365E1" />
+			<ComponentRef Id="comp_C56B7FDB_B5E5_475B_8D1B_DCA46626194B" />
+			<ComponentRef Id="comp_4D01A214_D0E5_4586_AEB8_759F7DEE0469" />
+			<ComponentRef Id="comp_F7214ACF_DB94_490A_AC1C_39CAE170D0A7" />
+			<ComponentRef Id="comp_9943E178_534A_457C_B2CA_BF646DB23839" />
+			<ComponentRef Id="comp_FDA1DC6E_8B89_4A80_9B02_C2071DE029F1" />
+    </ComponentGroup>
+    <!-- The composite feature of the installation package. -->
+    <Feature Id="CompleteInstall" Title="All Files" Level="1" ConfigurableDirectory="TARGETDIR">
+      <ComponentGroupRef Id="FileSystemGroup" />
+    </Feature>
+    <InstallExecuteSequence>
+      <Custom Action="DIRCA_TARGETDIR" Before="CostInitialize"><![CDATA[TARGETDIR=""]]></Custom>
+      <Custom Action="DIRCA_TARGETDIR_UNINSTALL" After="AppSearch"><![CDATA[PREVIOUSINSTALLFOLDER]]></Custom>
+      <Custom Action="_E4DDE2EB_AF84_40FD_B98B_8D8DFFB41C8F" After="StartServices"><![CDATA[$comp_910B4AA6_FB57_49FD_AFF7_960ED20365E1>2]]></Custom>
+      <Custom Action="_B53B3DA3_3D54_4E19_97ED_58E28E6300CA" After="_E4DDE2EB_AF84_40FD_B98B_8D8DFFB41C8F"><![CDATA[$comp_910B4AA6_FB57_49FD_AFF7_960ED20365E1>2]]></Custom>
+      <Custom Action="_40E256A3_7961_4248_995B_E7627F9E3E5D" After="MsiUnpublishAssemblies"><![CDATA[$comp_910B4AA6_FB57_49FD_AFF7_960ED20365E1=2]]></Custom>
+    </InstallExecuteSequence>
+    <InstallUISequence>
+      <FindRelatedProducts Sequence="200" />
+      <Custom Action="DIRCA_TARGETDIR" Before="CostInitialize"><![CDATA[TARGETDIR=""]]></Custom>
+      <Custom Action="DIRCA_TARGETDIR_UNINSTALL" After="AppSearch"><![CDATA[PREVIOUSINSTALLFOLDER]]></Custom>
+    </InstallUISequence>
+    <AdminUISequence>
+      <Custom Action="DIRCA_TARGETDIR" Before="CostInitialize"><![CDATA[TARGETDIR=""]]></Custom>
+    </AdminUISequence>
+  </Product>
+</Wix>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="Region.Binaries">
+            <Component Id="cmp65C93F2C0F67A255442C2BBA9393FFED" Guid="{9F9A2312-186A-434A-A0B5-4254533FCF09}">
+                <File Id="fil09989F54C6A97777158A38D6B9B3DDC1" Source="$(var.Region.TargetDir)\Region.dll" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="Region.Binaries">
+            <ComponentRef Id="cmp65C93F2C0F67A255442C2BBA9393FFED" />
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="Region.Satellites" />
+    </Fragment>
+</Wix>

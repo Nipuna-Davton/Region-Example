@@ -7,9 +7,9 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 //
 [assembly: AssemblyTitle("Region")]
-[assembly: AssemblyDescription("Region")]
+[assembly: AssemblyDescription("Sample Project of Add-in Express Region")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Default Company")]
+[assembly: AssemblyCompany("Davton (Pvt) Ltd")]
 [assembly: AssemblyProduct("Region")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]

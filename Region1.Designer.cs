@@ -35,6 +35,9 @@ namespace Region
             this.lblStartTime = new System.Windows.Forms.Label();
             this.lblEndTime = new System.Windows.Forms.Label();
             this.lblLocation = new System.Windows.Forms.Label();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.searchBox1 = new Region.UserControll.SearchBox();
+            this.pnlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGetSubject
@@ -80,11 +83,27 @@ namespace Region
             this.lblLocation.Size = new System.Drawing.Size(0, 13);
             this.lblLocation.TabIndex = 5;
             // 
+            // pnlMain
+            // 
+            this.pnlMain.Controls.Add(this.searchBox1);
+            this.pnlMain.Location = new System.Drawing.Point(7, 177);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(758, 118);
+            this.pnlMain.TabIndex = 6;
+            // 
+            // searchBox1
+            // 
+            this.searchBox1.Location = new System.Drawing.Point(33, 3);
+            this.searchBox1.Name = "searchBox1";
+            this.searchBox1.Size = new System.Drawing.Size(631, 100);
+            this.searchBox1.TabIndex = 0;
+            // 
             // Region1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(431, 122);
+            this.ClientSize = new System.Drawing.Size(792, 304);
+            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lblLocation);
             this.Controls.Add(this.lblEndTime);
             this.Controls.Add(this.lblStartTime);
@@ -92,8 +111,10 @@ namespace Region
             this.Controls.Add(this.btnGetSubject);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "Region1";
-            this.Text = "Regon1";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Region1_FormClosed);
+            this.Text = "Region1";
+            this.ADXAfterFormHide += new AddinExpress.OL.ADXOlForm.ADXAfterFormHideEventHandler(this.Region1_ADXAfterFormHide);
+            this.Load += new System.EventHandler(this.Region1_Load);
+            this.pnlMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,5 +126,7 @@ namespace Region
         private System.Windows.Forms.Label lblStartTime;
         private System.Windows.Forms.Label lblEndTime;
         private System.Windows.Forms.Label lblLocation;
+        private System.Windows.Forms.Panel pnlMain;
+        private UserControll.SearchBox searchBox1;
     }
 }

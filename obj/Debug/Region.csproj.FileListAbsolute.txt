@@ -5,7 +5,9 @@ C:\Users\Nipuna\source\repos\Region\Region\bin\Debug\Interop.Office.dll
 C:\Users\Nipuna\source\repos\Region\Region\bin\Debug\Interop.Outlook.dll
 C:\Users\Nipuna\source\repos\Region\Region\bin\Debug\Interop.VBIDE.dll
 C:\Users\Nipuna\source\repos\Region\Region\obj\Debug\Region.AddinModule.resources
+C:\Users\Nipuna\source\repos\Region\Region\obj\Debug\Region.Properties.Resources.resources
 C:\Users\Nipuna\source\repos\Region\Region\obj\Debug\Region.Region1.resources
+C:\Users\Nipuna\source\repos\Region\Region\obj\Debug\Region.UserControll.SearchBox.resources
 C:\Users\Nipuna\source\repos\Region\Region\obj\Debug\Region.csproj.GenerateResource.cache
 C:\Users\Nipuna\source\repos\Region\Region\obj\Debug\Region.csproj.CopyComplete
 C:\Users\Nipuna\source\repos\Region\Region\obj\Debug\Region.dll

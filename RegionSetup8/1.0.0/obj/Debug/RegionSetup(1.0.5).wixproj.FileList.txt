@@ -1,0 +1,7 @@
+C:\Users\Nipuna\source\repos\Region\Region\RegionSetup8\1.0.0\bin\Debug\RegionSetup(1.0.5).msi
+C:\Users\Nipuna\source\repos\Region\Region\RegionSetup8\1.0.0\bin\Debug\RegionSetup(1.0.5).wixpdb
+obj\\Debug\Product.wixobj
+obj\\Debug\pth097103023D79BFA5DEAFEB21752BBB19\_Region.wixobj
+obj\\Debug\RegionSetup(1.0.5).wixproj.BindContentsFileListnull.txt
+obj\\Debug\RegionSetup(1.0.5).wixproj.BindOutputsFileListnull.txt
+obj\\Debug\RegionSetup(1.0.5).wixproj.BindBuiltOutputsFileListnull.txt

@@ -62,18 +62,25 @@ namespace Region
            
         }
 
-        private void Region1_FormClosed(object sender, FormClosedEventArgs e)
+        private void Region1_ADXAfterFormHide(object sender, ADXAfterFormHideEventArgs e)
         {
             try
             {
                 AddinModule regionModule = AddinExpress.MSO.ADXAddinModule.CurrentInstance as AddinModule;
                 regionModule.ClearRibbonLables();
+                if (Marshal.IsComObject(regionModule))
+                    Marshal.ReleaseComObject(regionModule);
             }
             catch (Exception)
             {
 
                 throw;
             }
+        }
+
+        private void Region1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

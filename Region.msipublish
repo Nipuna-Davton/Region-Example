@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishConfiguration version="1.0" lastOpenedMSI="C:\Users\Nipuna\source\repos\Region\Region\RegionSetup8\1.0.0\bin\Debug\RegionSetup(1.0.5).msi">
+  <application version="1.0.0" language="1033" msiLocation="C:\Users\Nipuna\source\repos\Region\Region\RegionSetup8\1.0.0\bin\Debug\RegionSetup(1.0.5).msi" publishingLocation=".\MSIPublish\" installationUrl="C:\Users\Nipuna\Documents" scope="perUser" edition="Public" editions="Public,Test" customActionLocation="" customActionClassName="" customActionUseForAutomaticUpdates="false" customActionUseForDownloader="true">
+    <signingOptions signXml="false">
+      <sha1>true</sha1>
+      <sha256>true</sha256>
+    </signingOptions>
+    <preferences showInstallUI="true" showUninstallUI="false" webPage="" showDownloaderWindow="true" showRunningApplicationsWarning="true" showRunningApplicationsDialogButtons="YesNoCancel" multiLangSetup="false" supportedEditions="" generateConfig="false" configsDir="Configs\ClickTwice" separateConfigDirs="true" enableHashChecking="true" downloaderTitle="" downloaderProgressText="Downloading..." downloaderErrorMessage="" downloaderErrorUrl="" enableVersion="true" removePreviousVersions="true" deployExtension="true">
+      <updates enabled="false" allowExit="false" showAppIcon="true" showInTaskBar="false" showSkipVersion="true" useDoubleClick4NotifyIcon="false" allowNotifications="true" alwaysShowTrayIcon="false" checkWhenHostRun="true" checkUnloadUpdater="false" checkWhenHostClose="false" checkEvery="false" numCheckEvery="1" selectorCheckEvery="1" runOnWindowsStart="true" numRemindMe="1" selectorNumRemindMe="1" numRunningHostInterval="5" numNewVersionInterval="10" selectorWindowPos="1" generateUpdaterLog="true" updaterLogDir="$(Temp)\$(ProductName)" updaterAutoDownload="true" enableSilentUpdates="false" writeToSysLog="true" quietUpdateMode="false" showUpdateComplete="false" />
+      <urls enableDynamicURL="false" dynamicURLPrefix="" dynamicURLSuffix="" dynamicURLPath="" dynamicURLPeriod="month">
+        <additionalURLs />
+        <supportedAdditionalURLs />
+      </urls>
+    </preferences>
+    <prerequisites createSetupProgram="true" installFromVendor="false" installFromUrl="false" installUrl="" bootstrapperPath="c:\Program Files (x86)\Microsoft SDKs\ClickOnce Bootstrapper">
+      <product code=".NETFramework,Version=v4.5.2" displayName="Microsoft .NET Framework 4.5.2 (x86 and x64)" />
+    </prerequisites>
+    <ftp userName="" passive="0" anonimous="0" />
+  </application>
+</publishConfiguration>
